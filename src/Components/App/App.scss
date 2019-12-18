@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap');
+.body {
+    display: flex;
+    max-height: 100vh;
+    overflow:hidden;
+    .sideNav {
+        height:100vh;
+        display:flex;
+        flex-direction: column;
+        width: 80px;
+        background-color: #333333;
+        &.active {
+            color: #db0a5b;
+        }
+        .logo {
+            background-color: #db0a5b;
+            height: 80px;
+            width: 80px;
+            display: inline-flex;
+            align-items: center;
+            img {
+                width: 100%;
+            }
+        }
+        .log {
+            width: 55px;
+            height: 55px;
+
+            margin: 10px auto;
+
+            background-color: white;
+
+            // margin-top:10px;
+            border-radius: 15px;
+            transition: ease all .3s;
+            border: 2px solid black;
+            cursor: pointer;
+            &.active {
+                &:before {
+                    width: 10px;
+                    height: 10px;
+                    background-color: #db0a5b;
+                    content: '';
+                    position: relative;
+                    display: inline-block;
+                    top: 19px;
+                    left: -20px;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 5px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}

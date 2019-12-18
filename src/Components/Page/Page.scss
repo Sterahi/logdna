@@ -1,0 +1,106 @@
+.pageSections {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    // overflow: hidden;
+    .pageTitle {
+        background-color: #efefef;
+        font-weight: light;
+        width: 100%;
+        height:80px;
+        border-bottom: darken(#efefef, 30%) 1px solid;
+        box-shadow: 0px 0 20px rgba(0,0,0,0.5);
+        h1 {
+            font-weight: 200;
+            margin-left: 20px;
+        }
+    }
+    .pageSelection {
+        background-color: #efefef;
+        width:30%;
+        overflow-y:scroll;
+        position:relative;
+        height: 91vh;
+        z-index: 3;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+        .pageDetails {
+            max-width: 100%;
+            padding:5px 10px;
+            max-height: 300px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            border-bottom: darken(#efefef, 30%) 1px solid;
+            border-right: darken(#efefef, 30%) 1px solid;
+            line-height: 18px;
+            font-size:12px;
+            &:last-of-type {
+                border-bottom: none;
+            }
+            .detailHeader {
+                font-weight: bold;
+            }
+        }
+    }
+    .pageBody {
+        width: 65%;
+        margin: 0 auto;
+
+        overflow-y:scroll;
+        position:relative;
+        height: 91vh;
+
+        padding-bottom:75px;
+        .box {
+            width:80%;
+            margin: 0 auto;
+            margin-top: 35px;
+            height:300px;
+            background-color: darken(#efefef, 30%)
+        }
+    }
+}
+.buffer {
+    // Buffer height about 25px taller than the messageWrapper to give the content more space.
+    height:100px;
+}
+.messageWrapper {
+    width: 65%;
+    background-color: white;
+    position: fixed;
+    margin-left: -2.5%; // setting to 2.5 % (pageWidth = 65 so margin = 2.5 on each side. )
+    bottom:0;
+    border-top: 1px darken(#efefef, 30%);
+    input {
+        display: block;
+        width: 85%;
+        margin: 30px auto;
+        padding: 5px 10px;
+        line-height:1.5px;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+    }
+}
+.button {
+    position: absolute;
+    top: 29.5px;
+    font-size: 12px;
+    cursor:pointer;
+    border: 2px solid darken(#efefef, 30%);
+    border-radius: 5px;
+    display: inline-block;
+    padding: 5px 10px;
+    right: 36px;
+    transition: ease background-color .3s;
+    &:hover {
+        color: white;
+        background-color: darken(#efefef, 30%);
+    }
+}
